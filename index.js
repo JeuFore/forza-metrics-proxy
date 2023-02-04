@@ -28,36 +28,37 @@ const writeClient = client.getWriteApi(process.env.INFLUXDB_ORG, process.env.INF
 let i = 0
 
 socket.on('message', async (message, rinfo) => {
+    const data = message.toJSON().data;
+
     for (const [name, type] of Object.entries(DATATYPES)) {
         const point = new Point(name)
         const size = DATASIZES[type]
-        const data = message.toJSON().data.splice(0, size)
+        const db = data.splice(0, size)
         let dec
 
         switch (type) {
-
             case 's32':
-                dec = Buffer.from(data).readInt32LE(0)
+                dec = Buffer.from(db).readInt32LE(0)
                 point.intField('value', dec)
                 break
             case 'u32':
-                dec = Buffer.from(data).readUInt32LE(0)
+                dec = Buffer.from(db).readUInt32LE(0)
                 point.intField('value', dec)
                 break
             case 'f32':
-                dec = Buffer.from(data).readFloatLE(0)
+                dec = Buffer.from(db).readFloatLE(0)
                 point.floatField('value', dec)
                 break
             case 'u16':
-                dec = Buffer.from(data).readUInt16LE(0)
+                dec = Buffer.from(db).readUInt16LE(0)
                 point.intField('value', dec)
                 break
             case 'u8':
-                dec = Buffer.from(data).readUInt8(0)
+                dec = Buffer.from(db).readUInt8(0)
                 point.intField('value', dec)
                 break
             case 's8':
-                dec = Buffer.from(data).readInt8(0)
+                dec = Buffer.from(db).readInt8(0)
                 point.intField('value', dec)
                 break
         }
