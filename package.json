@@ -5,7 +5,7 @@
   "dependencies": {
     "@influxdata/influxdb-client": "^1.33.1",
     "dotenv": "^16.0.3",
-    "forza-horizon": "^1.0.8",
+    "forza-horizon": "^1.0.9",
     "koa": "^2.14.1",
     "ms-udp": "^1.1.1"
   },
