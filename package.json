@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "main": "index.js",
   "dependencies": {
-    "@influxdata/influxdb-client": "^1.33.1",
+    "@influxdata/influxdb-client": "^1.33.2",
     "dotenv": "^16.0.3",
     "forza-horizon": "^1.0.8",
     "koa": "^2.14.1",
