@@ -32,7 +32,7 @@
   "homepage": "https://github.com/JeuFore/forza-metrics-proxy#readme",
   "description": "",
   "devDependencies": {
-    "@commitlint/cli": "^17.6.3",
+    "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^17.7.0"
   }
 }
