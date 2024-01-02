@@ -5,7 +5,7 @@
   "dependencies": {
     "@influxdata/influxdb-client": "^1.33.2",
     "dotenv": "^16.3.1",
-    "koa": "^2.14.2"
+    "koa": "^2.15.0"
   },
   "scripts": {
     "start": "node index.js",
